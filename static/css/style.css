@@ -1,0 +1,157 @@
+body
+{
+    background-color: whitesmoke;
+}
+
+
+.web-title
+{
+    display: flex;
+    align-items: center;
+}
+
+.web-title img
+{
+    width: 10.75vw;     
+    height: 5vw;        
+}
+
+.web-title-text 
+{
+    font-size: 5.6vw;       
+    font-weight: 700;
+    color: #0B0223;
+    margin: 0 0 0 2.5vw;    
+}
+
+#title-g
+{
+    color: #FF42A5;
+}
+
+
+/* footer-section */
+.footer-section
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8.25vw;              
+    padding: 15vw 6vw;      
+    background: #0B0223;
+}
+
+footer .web-title-text,
+.footer-nav
+{
+    color: #FFF;
+}
+
+.footer-nav ul
+{
+    display: flex;
+    gap: 7.5vw;         
+    flex-wrap: wrap;
+    width: 50vw;
+}
+
+ul>li
+{
+    list-style: none;
+    font-size: 2.25vw;        
+}
+
+.footer-icon
+{
+    width: 5vw;       
+    height: 5vw;      
+}
+
+.footer-icon img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.icon-container
+{
+    display: flex;
+    align-items: center;
+    gap: 6vw;              
+    flex-wrap: wrap;
+    width: 30vw;         
+}
+
+#footer-nav-2, footer p
+{
+    font-size: 2vw;         
+    color: rgba(255, 255, 255, 0.60);
+}
+
+footer p
+{
+    margin-top: -5vw;         
+    width: 30vw;            
+    text-align: center;    
+}
+
+
+/* media query for screens larger than 576px */
+@media screen and (min-width: 577px) 
+{
+    .web-title img 
+    {
+        width: 4.3vw;     
+        height: 2vw;      
+    }
+
+    .web-title-text 
+    {
+        font-size: 2.25vw;         
+        margin: 0 0 0 1vw;        
+    }
+    
+    /* footer-section */
+    .footer-section
+    {
+        padding: 6vw 12vw;     
+        gap: 4vw;             
+    }
+
+    .footer-nav ul, 
+    .icon-container, footer p
+    {
+        width: max-content;
+    }
+
+    .footer-nav ul
+    {
+        gap: 3vw;        
+    }
+
+    ul>li
+    {
+        font-size: 1vw;        
+    }
+
+    .footer-icon
+    {
+        width: 2.2vw;      
+        height: 2.2vw;      
+    }
+
+    .icon-container
+    {
+        gap: 3vw;              
+    }
+
+    #footer-nav-2, footer p
+    {
+        font-size: 1vw;         
+    }
+
+    footer p
+    {
+        margin-top: -2vw;         
+    }
+}

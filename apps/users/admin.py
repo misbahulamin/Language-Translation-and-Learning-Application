@@ -1,9 +1,12 @@
-# from django.contrib import admin
+from django.contrib import admin
 # from .models import User
+from . import models
 
-# # admin.site.register(User)
+#admin.site.register(User)
 
-# # @admin.register(User)
-# # class UserAdmin(admin.ModelAdmin):
-# #     list_display = ('id', 'email',  )
+
+
+@admin.register(models.RegisterModel)
+class RegisterModelAdmin(admin.ModelAdmin):
+    list_display = ['name', 'roll' ]
     

@@ -49,7 +49,7 @@
               User Section
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="">Sign up</a></li>
+              <li><a class="dropdown-item" href="{% url 'sign_up' %}">Sign up</a></li>
               {% if user.is_authenticated %}
               <li><a class="dropdown-item" href="">User Profile</a></li>
               <li><a class="dropdown-item" href="">Log out</a></li>

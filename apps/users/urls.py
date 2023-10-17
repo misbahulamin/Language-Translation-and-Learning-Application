@@ -1,10 +1,11 @@
 from django.urls import path, include
 from rest_framework import routers
-from . import views 
+from .views import SignUpView 
 
-app_name = "users"
+# app_name = "users"
 
 router = routers.DefaultRouter()
+# router.register('register', SignUpView)
 # router.register(r"users", UserViewSet, basename="users")
 
 urlpatterns = [
@@ -16,7 +17,7 @@ urlpatterns = [
 
     # path('resend/activation-code/', ResendActivationCodeView.as_view(), name='resend_activation_code'),
 
-    path('signup/', views.SignUpView.as_view(), name='sign_up'),
+    path('signup/', SignUpView.as_view(), name='sign_up'),
     # path('activate/<code>/', ActivateView.as_view(), name='activate'),
 
     # path('restore/password/', RestorePasswordView.as_view(), name='restore_password'),

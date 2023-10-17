@@ -4,17 +4,23 @@
 
 
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views.generic.edit import CreateView
 from django.contrib.auth.models import User
 from .forms import SignUpForm
 from django.urls import reverse_lazy
 
 class SignUpView(CreateView):
-    model = User
+    # model = User
     form_class = SignUpForm
     template_name = 'signup.html'
-    success_url = reverse_lazy('success_page')
+    success_url = reverse_lazy('signup')
+    
+    def form_valid(self, form):
+        
+        form.save()
+        return redirect('signup')
+        
     
     
     
@@ -37,7 +43,7 @@ class SignUpView(CreateView):
 
 
 
-# class UserViewSet(viewsets.ModelViewSet):
+# class SignUpView(viewsets.ModelViewSet):
     
 #     queryset = models.RegisterModel.objects.all()
 #     serializer_class = serializers.UserSerializer

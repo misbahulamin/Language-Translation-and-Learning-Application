@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Translation History - LinguaVerse {% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Translation History</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Source Language</th>
+                <th>Target Language</th>
+                <th>Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in history %}
+            <tr>
+                <td>{{ item.timestamp }}</td>
+                <td>{{ item.source_language }}</td>
+                <td>{{ item.target_language }}</td>
+                <td>{{ item.text }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No translation history available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

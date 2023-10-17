@@ -111,22 +111,41 @@ class SignInViaEmailOrUsernameForm(SignIn, EmailOrUsernameForm):
         return ['email_or_username', 'password']
 
 
-class SignUpForm(UserCreationForm):
+
+
+class SignUpForm(forms.ModelForm):
+    
+    # username =  forms.CharField(widget= forms.TextInput(attrs={'id' : 'required'}))
+    # name =  forms.CharField(widget= forms.TextInput(attrs={'id' : 'required'}))
     class Meta:
         model = models.RegisterModel
-        #fields = settings.SIGN_UP_FIELDS
-        fields = ['username', 'name', 'email','age', 'password1', 'password2']
+        fields = '__all__'
 
-    email = forms.EmailField(label=_('Email'), help_text=_('Required. Enter an existing email address.'))
 
-    def clean_email(self):
-        email = self.cleaned_data['email']
 
-        user = User.objects.filter(email__iexact=email).exists()
-        if user:
-            raise ValidationError(_('You can not use this email address.'))
+# class SignUpForm(UserCreationForm):
+    
+#     # username =  forms.CharField(widget= forms.TextInput(attrs={'id' : 'required'}))
+#     # name =  forms.CharField(widget= forms.TextInput(attrs={'id' : 'required'}))
+#     class Meta:
+#         model = models.RegisterModel
+#         fields = '__all__'
+    
+    # class Meta:
+    #     model = models.RegisterModel
+    #     #fields = settings.SIGN_UP_FIELDS
+    #     fields = ['username', 'name', 'email','age', 'password1', 'password2']
 
-        return email
+    # email = forms.EmailField(label=_('Email'), help_text=_('Required. Enter an existing email address.'))
+
+    # def clean_email(self):
+    #     email = self.cleaned_data['email']
+
+    #     user = User.objects.filter(email__iexact=email).exists()
+    #     if user:
+    #         raise ValidationError(_('You can not use this email address.'))
+
+    #     return email
 
 
 class ResendActivationCodeForm(UserCacheMixin, forms.Form):

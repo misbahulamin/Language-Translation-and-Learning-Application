@@ -13,7 +13,7 @@ class RegisterModel(models.Model):
     mobile_num = models.TextField(default='+880')
     study_level = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
-    age = models.ImageField()
+    age = models.IntegerField()
     address = models.TextField(default='Address')
     password1 = models.TextField(max_length=100,default='123')
     password2 = models.TextField(max_length=100, default='123')

@@ -4,7 +4,6 @@ from django.contrib import admin
 
 
 
-from django.contrib import admin
 from .models import TranslationHistory, TranslationCorrection
 
 class TranslationHistoryAdmin(admin.ModelAdmin):

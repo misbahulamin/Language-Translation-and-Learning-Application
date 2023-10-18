@@ -8,6 +8,8 @@ from django.views import View
 from deep_translator import GoogleTranslator
 
 class TranslateView(View):
+    
+    
     template_name = 'translate.html'
 
     def get(self, request):
@@ -29,9 +31,9 @@ class TranslateView(View):
         })
 
 
-class TranslationHistoryView(View):
-    template_name = 'history.html'
+# class TranslationHistoryView(View):
+#     template_name = 'history.html'
 
-    def get(self, request):
-        history = TranslationHistory.objects.filter(user=request.user)
-        return render(request, self.template_name, {'history': history})
+#     def get(self, request):
+#         history = TranslationHistory.objects.filter(user=request.user)
+#         return render(request, self.template_name, {'history': history})

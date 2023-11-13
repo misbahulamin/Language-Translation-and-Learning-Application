@@ -14,6 +14,8 @@ class TranslationHistory(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
 
+
+
 class TranslationCorrection(models.Model):
     history = models.ForeignKey(TranslationHistory, on_delete=models.CASCADE)
     correction_text = models.TextField()

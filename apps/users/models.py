@@ -16,13 +16,26 @@ class RegisterModel(models.Model):
     age = models.IntegerField()
     address = models.TextField(default='Address')
     password1 = models.TextField(max_length=100,default='123')
-    password2 = models.TextField(max_length=100, default='123')
+    password2 = models.TextField(max_length=100, default='123')  
     # mail_address = models.EmailField()
     # mobile = models.TextField(default='+880')
-      
-    def __str__(self):
-        return self.name
     
+    
+      
+    # def __str__(self):
+    #     return self.name
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -50,4 +63,9 @@ class RegisterModel(models.Model):
 
 #     USERNAME_FIELD = "email"
 #     REQUIRED_FIELDS = ["username"]
+
+
+
+
+
 

@@ -47,3 +47,21 @@ class SignUpView(CreateView):
     
 #     queryset = models.RegisterModel.objects.all()
 #     serializer_class = serializers.UserSerializer
+
+
+
+
+
+
+
+
+class SignUpView(CreateView):
+    # model = User
+    form_class = SignUpForm
+    template_name = 'signup.html'
+    success_url = reverse_lazy('signup')
+    
+    def form_valid(self, form):
+        
+        form.save()
+        return redirect('signup')

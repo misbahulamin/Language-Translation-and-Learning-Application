@@ -4,6 +4,124 @@
 <html>
 <head>
     <title>Sign Up</title>
+
+    <link rel="stylesheet" type="text/css" href="apps/users/templates/style.css">
+</head>
+<body>
+ 
+
+
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2>Registration Form</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form method="POST" action="{% url 'sign_up' %}">
+          {% csrf_token %}
+          
+          <!-- Email Field -->
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            {{ form.email.label_tag }}
+            {{ form.email }}
+          </div>
+          
+          <!-- Password Field -->
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+          </div>
+          
+          <!-- Re-type Password Field -->
+          <div class="input_field">
+            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+          </div>
+          
+          <div class="row clearfix">
+            <div class="col_half">
+              <!-- First Name Field -->
+              <div class="input_field">
+                <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                {{ form.name.label_tag }}
+                {{ form.name }}
+              </div>
+            </div>
+            <div class="col_half">
+              <!-- Last Name Field -->
+              <div class="input_field">
+                <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
+              </div>
+            </div>
+          </div>
+          
+          <!-- Gender Field -->
+          <div class="input_field radio_option">
+            {{ form.gender.label_tag }}
+            {{ form.gender }}
+          </div>
+          
+          <!-- Country Field -->
+          <div class="input_field select_option">
+            {{ form.country.label_tag }}
+            {{ form.country }}
+          </div>
+          
+          <!-- Terms and Conditions Checkbox -->
+          <div class="input_field checkbox_option">
+            {{ form.terms_and_conditions.label_tag }}
+            {{ form.terms_and_conditions }}
+          </div>
+          
+          <!-- Newsletter Checkbox -->
+          <div class="input_field checkbox_option">
+            {{ form.receive_newsletter.label_tag }}
+            {{ form.receive_newsletter }}
+          </div>
+          
+          <input class="button" type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
 </head>
 <body>
     <h2>Sign Up</h2>
@@ -13,4 +131,4 @@
         <button type="submit">Sign Up</button>
     </form>
 </body>
-</html>
+</html> {% endcomment %}

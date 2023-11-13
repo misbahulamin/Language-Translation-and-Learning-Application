@@ -1,0 +1,176 @@
+
+
+
+
+
+/* Reset some default browser styles */
+body, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add basic styling to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Style the form container */
+.form_wrapper {
+    background: #fff;
+    width: 400px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 25px;
+    margin: 0 auto;
+    border-top: 5px solid #f5ba1a;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the form title */
+.title_container h2 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin: 0;
+    text-align: center;
+}
+
+/* Style form input fields and icons */
+.input_field {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    i {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px 10px;
+        height: 35px;
+        border: 1px solid #cccccc;
+        box-sizing: border-box;
+        outline: none;
+        transition: all 0.30s ease-in-out;
+    }
+
+    input[type="text"]:hover,
+    input[type="email"]:hover,
+    input[type="password"]:hover {
+        background: #fafafa;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border: 1px solid #f5ba1a;
+        background: #fafafa;
+    }
+}
+
+/* Style the radio buttons */
+.radio_option label {
+    margin-right: 1em;
+    position: relative;
+
+    input:hover + label:before {
+        border-color: #000000;
+    }
+
+    input:checked + label:before {
+        background-color: #000000;
+        border-color: #000000;
+    }
+}
+
+/* Style the select input */
+.select_option select {
+    display: inline-block;
+    width: 100%;
+    padding: 0px 15px;
+    cursor: pointer;
+    color: #7b7b7b;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    background: #fff;
+    transition: all 0.2s ease;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:hover,
+    &:focus {
+        color: #000000;
+        background: #fafafa;
+        border: 1px solid #000000;
+        outline: none;
+    }
+}
+
+/* Style the checkboxes */
+.checkbox_option label {
+    margin-right: 1em;
+    position: relative;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 0.5em;
+        height: 0.5em;
+        margin-right: 0.5em;
+        vertical-align: -2px;
+        border: 2px solid #cccccc;
+        padding: 0.12em;
+        background-color: transparent;
+        background-clip: content-box;
+        transition: all 0.2s ease;
+    }
+
+    input:hover + label:before {
+        border-color: #000000;
+    }
+
+    input:checked + label {
+        &:before {
+            border-color: #000000;
+        }
+    }
+}
+
+/* Style the submit button */
+.button {
+    background: #f5ba1a;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    transition: all 0.30s ease-in-out;
+
+    &:hover {
+        background: #c9a913;
+    }
+
+    &:focus {
+        background: #c9a913;
+    }
+}

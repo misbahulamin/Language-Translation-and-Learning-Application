@@ -14,6 +14,20 @@ class UserCacheMixin:
     user_cache = None
 
 
+
+
+class SignUpForm(forms.ModelForm):
+    
+    # username =  forms.CharField(widget= forms.TextInput(attrs={'id' : 'required'}))
+    # name =  forms.CharField(widget= forms.TextInput(attrs={'id' : 'required'}))
+    class Meta:
+        model = models.RegisterModel
+        fields = '__all__'
+
+
+
+
+
 class SignIn(UserCacheMixin, forms.Form):
     password = forms.CharField(label=_('Password'), strip=False, widget=forms.PasswordInput)
 

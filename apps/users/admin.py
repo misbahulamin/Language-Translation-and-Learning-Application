@@ -8,5 +8,5 @@ from . import models
 
 @admin.register(models.RegisterModel)
 class RegisterModelAdmin(admin.ModelAdmin):
-    list_display = ['name', 'roll' ]
-    
+    # list_display = ('id')
+    list_display = ['name']

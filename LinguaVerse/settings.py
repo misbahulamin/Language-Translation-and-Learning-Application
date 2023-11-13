@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'apps.users',
     'apps.translation',
+    'courses',
+    'chatbot',
 ]
 
 MIDDLEWARE = [
@@ -145,7 +147,7 @@ STATIC_URL = '/static/'
  
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
+    # '/var/www/static/',
 ]
 # STATICFILES_DIRS = [BASE_DIR/'static']
 

@@ -19,7 +19,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="target_language" class="form-label">Target Language</label>
+            <label for "target_language" class="form-label">Target Language</label>
             <select class="form-select" id="target_language" name="target_language" required>
                 <option value="" selected>Select a target language</option>
                 <!-- Add options here using JavaScript or Django template tags -->
@@ -27,13 +27,115 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Translate</button>
+
+        <!-- Button for voice input -->
+        <button type="button" id="voice_input_button" class="btn btn-secondary">Voice Input</button>
     </form>
 
     <h2 class="mt-4">Translation Result:</h2>
-    <p>{{ source_text }}</p>
-    <p>{{ target_text }}</p>
-    <!-- Other specific content for this page -->
+    <p id="source_text_display">{{ source_text }}</p>
+    <p id="target_text_display">{{ target_text }}</p>
+</div>
 {% endblock content %}
 {% load static %}
 <!-- Include your external JavaScript file using the template tag -->
 <script src="{% static 'js/language_options.js' %}"></script>
+<!-- Add the JavaScript code for voice input and translation -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const voiceInputButton = document.getElementById("voice_input_button");
+        const sourceTextArea = document.getElementById("source_text");
+
+        voiceInputButton.addEventListener("click", function () {
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US'; // Set the language to English or change as needed
+
+            recognition.onresult = function (event) {
+                const result = event.results[0][0].transcript;
+                sourceTextArea.value = result;
+            };
+
+            recognition.start();
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="source_text" class="form-label">Source Text</label>
+            <textarea class="form-control" id="source_text" name="source_text" rows="4" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="source_language" class="form-label">Source Language</label>
+            <select class="form-select" id="source_language" name="source_language" required>
+                <option value="" selected>Select a source language</option>
+                <!-- Add options here using JavaScript or Django template tags -->
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for "target_language" class="form-label">Target Language</label>
+            <select class="form-select" id="target_language" name="target_language" required>
+                <option value="" selected>Select a target language</option>
+                <!-- Add options here using JavaScript or Django template tags -->
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Translate</button>
+
+        <!-- Button for voice input -->
+        <button type="button" id="voice_input_button" class="btn btn-secondary">Voice Input</button>
+    </form>
+
+    <h2 class="mt-4">Translation Result:</h2>
+    <p id="source_text_display">{{ source_text }}</p>
+    <p id="target_text_display">{{ target_text }}</p>
+</div>
+{% endblock content %}
+{% load static %}
+<!-- Include your external JavaScript file using the template tag -->
+<script src="{% static 'js/language_options.js' %}"></script>
+<!-- Add the JavaScript code for voice input and translation -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const voiceInputButton = document.getElementById("voice_input_button");
+        const sourceTextArea = document.getElementById("source_text");
+
+        voiceInputButton.addEventListener("click", function () {
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US'; // Set the language to English or change as needed
+
+            recognition.onresult = function (event) {
+                const result = event.results[0][0].transcript;
+                sourceTextArea.value = result;
+            };
+
+            recognition.start();
+        });
+    });
+</script> {% endcomment %}

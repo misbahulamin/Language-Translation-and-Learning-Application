@@ -25,4 +25,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('users/', include('apps.users.urls')),
     path('translate/', include('apps.translation.urls')),
+    path('bot/', include('chatbot.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

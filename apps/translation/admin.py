@@ -2,8 +2,6 @@ from django.contrib import admin
 
 # Register your models here.
 
-
-
 from .models import TranslationHistory, TranslationCorrection
 
 class TranslationHistoryAdmin(admin.ModelAdmin):
